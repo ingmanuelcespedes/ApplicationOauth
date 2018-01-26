@@ -1,0 +1,73 @@
+!SESSION 2018-01-26 10:05:18.002 -----------------------------------------------
+eclipse.buildId=4.6.2.M20161124-1400
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-01-26 10:17:31.654
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\acespedesl'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.sf.feeling.decompiler 4 0 2018-01-26 10:17:46.101
+!MESSAGE 
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.sf.feeling.decompiler.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:73)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.getUpdateUrl(DecompilerUpdateHandler.java:235)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.getUpdateVersion(DecompilerUpdateHandler.java:183)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.updateDecompiler(DecompilerUpdateHandler.java:102)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.access$0(DecompilerUpdateHandler.java:96)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler$2.run(DecompilerUpdateHandler.java:78)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.runtime.CoreException: Node not found: '472922'
+	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.getNode(DefaultMarketplaceService.java:304)
+	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.getNode(DefaultMarketplaceService.java:313)
+	... 11 more
+Root exception:
+org.eclipse.core.runtime.CoreException: Node not found: '472922'
+	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.getNode(DefaultMarketplaceService.java:304)
+	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.getNode(DefaultMarketplaceService.java:313)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.sf.feeling.decompiler.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:73)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.getUpdateUrl(DecompilerUpdateHandler.java:235)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.getUpdateVersion(DecompilerUpdateHandler.java:183)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.updateDecompiler(DecompilerUpdateHandler.java:102)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler.access$0(DecompilerUpdateHandler.java:96)
+	at org.sf.feeling.decompiler.update.DecompilerUpdateHandler$2.run(DecompilerUpdateHandler.java:78)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.gwtplugins.gdt.eclipse.suite 1 0 2018-01-26 10:19:36.710
+!MESSAGE Registering: com.gwtplugins.gwt.eclipse.sdkbundle.gwt27_2.7.0.201710131939
+
+!ENTRY com.gwtplugins.gwt.eclipse.wtp 1 1 2018-01-26 10:25:41.174
+!MESSAGE GWT: GWT Facet startup
+
+!ENTRY org.eclipse.jface.text 2 0 2018-01-26 10:28:08.948
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-01-26 10:28:08.950
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-01-26 10:40:26.348
+!MESSAGE No repository found at http://www.pramati.com/downloads/eclipse/updates/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-01-26 10:40:47.180
+!MESSAGE No repository found at jar:file:/C:/Users/consultor2/Downloads/gwt-2.8.1.zip!/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-01-26 10:40:49.726
+!MESSAGE No repository found at http://master.dl.sourceforge.net/project/sapnweclipse/updates/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2018-01-26 10:41:08.573
+!MESSAGE No repository found at http://www.apache.org/dist/geronimo/eclipse/updates/.
