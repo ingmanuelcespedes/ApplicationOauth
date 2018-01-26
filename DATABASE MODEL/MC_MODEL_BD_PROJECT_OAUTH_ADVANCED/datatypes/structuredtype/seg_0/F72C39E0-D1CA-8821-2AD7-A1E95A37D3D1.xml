@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StructuredType class="oracle.dbtools.crest.model.design.datatypes.StructuredType" name="XMLTYPE" directorySegmentName="seg_0" id="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 19:57:39 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<visible>false</visible>
+<predefined>true</predefined>
+<final>false</final>
+<instantiable>true</instantiable>
+</StructuredType>

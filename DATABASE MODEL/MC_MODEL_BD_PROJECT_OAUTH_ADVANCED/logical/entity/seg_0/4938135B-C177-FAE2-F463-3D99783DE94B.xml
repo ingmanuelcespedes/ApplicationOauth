@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4938135B-C177-FAE2-F463-3D99783DE94B" name="MC_TYPE_OAUTH">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 19:59:46 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MC_TYPE_OAUTH_ID" id="4BF3E68D-12FF-BC28-9A53-BC748C7AF16A">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:08:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="MC_TYPE_OAUTH_DESCRIPTION" id="D2867F2A-423E-E739-FE64-24C3CF90863F">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:09:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="MC_TYPE_STATUS" id="31E8BD50-86EA-DCDD-EFE2-D04FB0FE3197">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:09:49 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="MC_TYPE_ALTER_USER" id="25BEAF5B-0FFB-6F38-50D3-434D2BABAB05">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:18:30 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="MC_TYPE_ALTER_DATE" id="58C2E76E-0074-3CBD-C532-EB69274EFE4E">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:18:52 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+</Attribute>
+<Attribute name="MC_TYPE_NETWORK" id="1E83C049-C16A-054C-8757-208DEBC7E293">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:20:43 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="03D63C6C-810E-A09A-DE93-4BD32BED81D1" name="MC_TYPE_OAUTH PK">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:09:09 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4BF3E68D-12FF-BC28-9A53-BC748C7AF16A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

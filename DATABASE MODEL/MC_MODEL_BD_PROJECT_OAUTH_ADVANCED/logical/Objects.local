@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="C9403774-DF2D-82C9-8C05-C410669FF693" name="MC_MENU_ADVANCED" seqName="seg_0"/>
+   <object objectType="Entity" objectID="8A324C99-253F-461F-DB6F-0FCFF6B3C292" name="MC_MENU_ITEM" seqName="seg_0"/>
+   <object objectType="Entity" objectID="3D6F453C-B929-CD7F-59AB-E20050606A49" name="MC_SESSION_OAUTH" seqName="seg_0"/>
+   <object objectType="Entity" objectID="4938135B-C177-FAE2-F463-3D99783DE94B" name="MC_TYPE_OAUTH" seqName="seg_0"/>
+   <object objectType="Entity" objectID="787032BC-8032-99DE-54E5-84E1213AAB6C" name="MC_USERS" seqName="seg_0"/>
+   <object objectType="Entity" objectID="655D1FE6-8A51-1811-3AF1-32A1CDD7524B" name="MC_USERS_ITEM_MENU" seqName="seg_0"/>
+   <object objectType="Entity" objectID="8F7D9301-DE86-7AA2-A0A9-B8533EB53001" name="MC_USERS_MENU_OAUTH" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BEBD3E7C-809A-D574-5A12-19512D1DF9F0" name="Relation_10" seqName="seg_0"/>
+   <object objectType="Relation" objectID="9E432F28-A706-CAB0-1822-A48764F45333" name="Relation_11" seqName="seg_0"/>
+   <object objectType="Relation" objectID="1B2AB0D9-96BF-F492-A0D2-4521FADB9637" name="Relation_5" seqName="seg_0"/>
+   <object objectType="Relation" objectID="869F2CBC-F4A4-3B94-F283-EA50E949539A" name="Relation_6" seqName="seg_0"/>
+   <object objectType="Relation" objectID="091A20A7-1AAE-52CE-6AC2-309555FCA5DA" name="Relation_7" seqName="seg_0"/>
+   <object objectType="Relation" objectID="AC66F735-9E61-4AE4-0B58-8B683E8F1781" name="Relation_8" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E1803B87-4A83-8486-0DD0-EFF30D0D5878" name="Relation_9" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

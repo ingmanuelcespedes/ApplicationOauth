@@ -1,0 +1,6 @@
+-- Database: mariadb
+
+-- DROP DATABASE mariadb;
+
+SELECT * FROM MC_USERS
+

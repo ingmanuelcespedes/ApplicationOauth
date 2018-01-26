@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8F7D9301-DE86-7AA2-A0A9-B8533EB53001" name="MC_USERS_MENU_OAUTH">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 20:47:37 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MC_MENU_ADVANCED_ID" id="5B27E941-26CD-E7B4-D73A-53696F0153F6">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 21:24:57 UTC</createdTime>
+<generatorID>BEBD3E7C-809A-D574-5A12-19512D1DF9F0</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<referedAttribute>8964BF42-5705-7ECF-EAA8-554EC659FA03</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="MC_USERS_ID" id="DFA9BE2A-4B81-19E0-CA17-47BACCD68888">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 21:25:03 UTC</createdTime>
+<generatorID>9E432F28-A706-CAB0-1822-A48764F45333</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<referedAttribute>DE43BEC9-D373-9F62-8437-D8132E6AB8AE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="MC_USERS_MENU_OAUTH" id="5E642224-6C61-488B-878B-CFA8BEE6E9B0">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 21:39:44 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E1916BCA-43D6-3CF8-C9F7-5E5CAB41C3B8" name="MC_USERS_MENU_OAUTH PK">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 21:24:57 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<engineerTo>
+<item key="03F21C30-F159-AB54-53CA-282A8AF40CB9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5B27E941-26CD-E7B4-D73A-53696F0153F6</attributeRef>
+<attributeRef>DFA9BE2A-4B81-19E0-CA17-47BACCD68888</attributeRef>
+<attributeRef>5E642224-6C61-488B-878B-CFA8BEE6E9B0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

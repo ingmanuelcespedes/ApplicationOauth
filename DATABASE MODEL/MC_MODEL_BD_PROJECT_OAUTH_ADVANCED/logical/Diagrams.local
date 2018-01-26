@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="main_view" objectID="CC9120B0-5099-0F8A-87C5-F35216A233DD" name="" visible="false"/>
+   <object objectType="sub_view" objectID="53A2B4BF-D540-E964-531D-BCF2C33C28F1" name="MODEL_OAUTH_ADVANCED}" visible="true"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

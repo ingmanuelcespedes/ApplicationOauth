@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="MC_MODEL_BD_PROJECT_OAUTH_ADVANCED" id="4D67EC75-9508-8851-1976-DF4F6F4A1DEE" version="3.5">
+<createdBy>acespedesl</createdBy>
+<createdTime>2018-01-25 19:57:39 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>MC_MODEL_BD_PROJECT_OAUTH_ADVANCED</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>4D67EC75-9508-8851-1976-DF4F6F4A1DEE</designId>
+</OSDM_Design>
