@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMcSessionOauthTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthId}"/>
+                    <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthId}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthId}"/>
+                    <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthUserLogin}"/>
+                    <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthUserLogin}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthUserLogin}"/>
+                    <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthDateBegin}"/>
+                    <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthDateBegin}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthDateBegin}"/>
+                    <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthDateEnd}"/>
+                    <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthDateEnd}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthDateEnd}"/>
+                    <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthUsersId}"/>
+                    <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthUsersId}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthUsersId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcSessionOauthController.destroyAndView}" value="#{bundle.ViewMcSessionOauthDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMcSessionOauthEditLink}"/>
+                <br />
+                <h:commandLink action="#{mcSessionOauthController.prepareCreate}" value="#{bundle.ViewMcSessionOauthCreateLink}" />
+                <br />
+                <h:commandLink action="#{mcSessionOauthController.prepareList}" value="#{bundle.ViewMcSessionOauthShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMcSessionOauthIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

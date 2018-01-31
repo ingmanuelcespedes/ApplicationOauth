@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMcSessionOauthTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMcSessionOauthEmpty}" rendered="#{mcSessionOauthController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mcSessionOauthController.items.rowCount > 0}">
+                    <h:outputText value="#{mcSessionOauthController.pagination.pageFirstItem + 1}..#{mcSessionOauthController.pagination.pageLastItem + 1}/#{mcSessionOauthController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mcSessionOauthController.previous}" value="#{bundle.Previous} #{mcSessionOauthController.pagination.pageSize}" rendered="#{mcSessionOauthController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mcSessionOauthController.next}" value="#{bundle.Next} #{mcSessionOauthController.pagination.pageSize}" rendered="#{mcSessionOauthController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mcSessionOauthController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcSessionOauthTitle_mcSessionOauthId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcSessionOauthId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcSessionOauthTitle_mcSessionOauthUserLogin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcSessionOauthUserLogin}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcSessionOauthTitle_mcSessionOauthDateBegin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcSessionOauthDateBegin}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcSessionOauthTitle_mcSessionOauthDateEnd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcSessionOauthDateEnd}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcSessionOauthTitle_mcSessionOauthUsersId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcSessionOauthUsersId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mcSessionOauthController.prepareView}" value="#{bundle.ListMcSessionOauthViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mcSessionOauthController.prepareEdit}" value="#{bundle.ListMcSessionOauthEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mcSessionOauthController.destroy}" value="#{bundle.ListMcSessionOauthDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mcSessionOauthController.prepareCreate}" value="#{bundle.ListMcSessionOauthCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListMcSessionOauthIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

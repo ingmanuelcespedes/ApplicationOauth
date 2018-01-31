@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMcMenuItemTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMcMenuItemEmpty}" rendered="#{mcMenuItemController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mcMenuItemController.items.rowCount > 0}">
+                    <h:outputText value="#{mcMenuItemController.pagination.pageFirstItem + 1}..#{mcMenuItemController.pagination.pageLastItem + 1}/#{mcMenuItemController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mcMenuItemController.previous}" value="#{bundle.Previous} #{mcMenuItemController.pagination.pageSize}" rendered="#{mcMenuItemController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mcMenuItemController.next}" value="#{bundle.Next} #{mcMenuItemController.pagination.pageSize}" rendered="#{mcMenuItemController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mcMenuItemController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcMenuItemTitle_mcMenuItemId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcMenuItemId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcMenuItemTitle_mcMenuItemName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcMenuItemName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcMenuItemTitle_mcMenuItemStatus}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcMenuItemStatus}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcMenuItemTitle_mcMenuItemAlterUser}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcMenuItemAlterUser}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcMenuItemTitle_mcMenuItemAlterDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcMenuItemAlterDate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcMenuItemTitle_mcMenuItemAlterNetwork}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcMenuItemAlterNetwork}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mcMenuItemController.prepareView}" value="#{bundle.ListMcMenuItemViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mcMenuItemController.prepareEdit}" value="#{bundle.ListMcMenuItemEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mcMenuItemController.destroy}" value="#{bundle.ListMcMenuItemDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mcMenuItemController.prepareCreate}" value="#{bundle.ListMcMenuItemCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListMcMenuItemIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

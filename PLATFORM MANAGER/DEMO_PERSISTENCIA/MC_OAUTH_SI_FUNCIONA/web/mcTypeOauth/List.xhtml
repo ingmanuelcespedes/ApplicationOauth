@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMcTypeOauthTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMcTypeOauthEmpty}" rendered="#{mcTypeOauthController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mcTypeOauthController.items.rowCount > 0}">
+                    <h:outputText value="#{mcTypeOauthController.pagination.pageFirstItem + 1}..#{mcTypeOauthController.pagination.pageLastItem + 1}/#{mcTypeOauthController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mcTypeOauthController.previous}" value="#{bundle.Previous} #{mcTypeOauthController.pagination.pageSize}" rendered="#{mcTypeOauthController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mcTypeOauthController.next}" value="#{bundle.Next} #{mcTypeOauthController.pagination.pageSize}" rendered="#{mcTypeOauthController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mcTypeOauthController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcTypeOauthTitle_mcTypeOauthId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcTypeOauthId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcTypeOauthTitle_mcTypeOauthDescription}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcTypeOauthDescription}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcTypeOauthTitle_mcTypeOauthStatus}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcTypeOauthStatus}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcTypeOauthTitle_mcTypeOauthAlterUser}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcTypeOauthAlterUser}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcTypeOauthTitle_mcTypeOauthAlterDate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcTypeOauthAlterDate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMcTypeOauthTitle_mcTypeOauthAlterNetwork}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mcTypeOauthAlterNetwork}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mcTypeOauthController.prepareView}" value="#{bundle.ListMcTypeOauthViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mcTypeOauthController.prepareEdit}" value="#{bundle.ListMcTypeOauthEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mcTypeOauthController.destroy}" value="#{bundle.ListMcTypeOauthDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mcTypeOauthController.prepareCreate}" value="#{bundle.ListMcTypeOauthCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListMcTypeOauthIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

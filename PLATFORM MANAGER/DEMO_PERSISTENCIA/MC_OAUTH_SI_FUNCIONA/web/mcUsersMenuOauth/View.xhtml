@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMcUsersMenuOauthTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMcUsersMenuOauthLabel_mcUsersMenuOauthId}"/>
+                    <h:outputText value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthId}" title="#{bundle.ViewMcUsersMenuOauthTitle_mcUsersMenuOauthId}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersMenuOauthLabel_mcUsersMenuOauthMenuId}"/>
+                    <h:outputText value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthMenuId}" title="#{bundle.ViewMcUsersMenuOauthTitle_mcUsersMenuOauthMenuId}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersMenuOauthLabel_mcUsersMenuOauthUsersId}"/>
+                    <h:outputText value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthUsersId}" title="#{bundle.ViewMcUsersMenuOauthTitle_mcUsersMenuOauthUsersId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcUsersMenuOauthController.destroyAndView}" value="#{bundle.ViewMcUsersMenuOauthDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMcUsersMenuOauthEditLink}"/>
+                <br />
+                <h:commandLink action="#{mcUsersMenuOauthController.prepareCreate}" value="#{bundle.ViewMcUsersMenuOauthCreateLink}" />
+                <br />
+                <h:commandLink action="#{mcUsersMenuOauthController.prepareList}" value="#{bundle.ViewMcUsersMenuOauthShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMcUsersMenuOauthIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

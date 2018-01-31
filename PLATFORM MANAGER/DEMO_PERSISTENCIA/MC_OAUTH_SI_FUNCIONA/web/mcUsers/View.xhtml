@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMcUsersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersId}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersId}" title="#{bundle.ViewMcUsersTitle_mcUsersId}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersName}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersName}" title="#{bundle.ViewMcUsersTitle_mcUsersName}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersDescription}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersDescription}" title="#{bundle.ViewMcUsersTitle_mcUsersDescription}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersBirthDate}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersBirthDate}" title="#{bundle.ViewMcUsersTitle_mcUsersBirthDate}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersGender}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersGender}" title="#{bundle.ViewMcUsersTitle_mcUsersGender}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersLogin}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersLogin}" title="#{bundle.ViewMcUsersTitle_mcUsersLogin}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersPass}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersPass}" title="#{bundle.ViewMcUsersTitle_mcUsersPass}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersAlterUser}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersAlterUser}" title="#{bundle.ViewMcUsersTitle_mcUsersAlterUser}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersAlterDate}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersAlterDate}" title="#{bundle.ViewMcUsersTitle_mcUsersAlterDate}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersAlterNetwork}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersAlterNetwork}" title="#{bundle.ViewMcUsersTitle_mcUsersAlterNetwork}"/>
+                    <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersType}"/>
+                    <h:outputText value="#{mcUsersController.selected.mcUsersType}" title="#{bundle.ViewMcUsersTitle_mcUsersType}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcUsersController.destroyAndView}" value="#{bundle.ViewMcUsersDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMcUsersEditLink}"/>
+                <br />
+                <h:commandLink action="#{mcUsersController.prepareCreate}" value="#{bundle.ViewMcUsersCreateLink}" />
+                <br />
+                <h:commandLink action="#{mcUsersController.prepareList}" value="#{bundle.ViewMcUsersShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMcUsersIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

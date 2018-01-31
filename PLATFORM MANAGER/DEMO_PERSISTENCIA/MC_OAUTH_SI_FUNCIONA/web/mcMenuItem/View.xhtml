@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMcMenuItemTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMcMenuItemLabel_mcMenuItemId}"/>
+                    <h:outputText value="#{mcMenuItemController.selected.mcMenuItemId}" title="#{bundle.ViewMcMenuItemTitle_mcMenuItemId}"/>
+                    <h:outputText value="#{bundle.ViewMcMenuItemLabel_mcMenuItemName}"/>
+                    <h:outputText value="#{mcMenuItemController.selected.mcMenuItemName}" title="#{bundle.ViewMcMenuItemTitle_mcMenuItemName}"/>
+                    <h:outputText value="#{bundle.ViewMcMenuItemLabel_mcMenuItemStatus}"/>
+                    <h:outputText value="#{mcMenuItemController.selected.mcMenuItemStatus}" title="#{bundle.ViewMcMenuItemTitle_mcMenuItemStatus}"/>
+                    <h:outputText value="#{bundle.ViewMcMenuItemLabel_mcMenuItemAlterUser}"/>
+                    <h:outputText value="#{mcMenuItemController.selected.mcMenuItemAlterUser}" title="#{bundle.ViewMcMenuItemTitle_mcMenuItemAlterUser}"/>
+                    <h:outputText value="#{bundle.ViewMcMenuItemLabel_mcMenuItemAlterDate}"/>
+                    <h:outputText value="#{mcMenuItemController.selected.mcMenuItemAlterDate}" title="#{bundle.ViewMcMenuItemTitle_mcMenuItemAlterDate}"/>
+                    <h:outputText value="#{bundle.ViewMcMenuItemLabel_mcMenuItemAlterNetwork}"/>
+                    <h:outputText value="#{mcMenuItemController.selected.mcMenuItemAlterNetwork}" title="#{bundle.ViewMcMenuItemTitle_mcMenuItemAlterNetwork}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcMenuItemController.destroyAndView}" value="#{bundle.ViewMcMenuItemDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMcMenuItemEditLink}"/>
+                <br />
+                <h:commandLink action="#{mcMenuItemController.prepareCreate}" value="#{bundle.ViewMcMenuItemCreateLink}" />
+                <br />
+                <h:commandLink action="#{mcMenuItemController.prepareList}" value="#{bundle.ViewMcMenuItemShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMcMenuItemIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

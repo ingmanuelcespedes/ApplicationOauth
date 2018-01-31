@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMcTypeOauthTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMcTypeOauthLabel_mcTypeOauthId}"/>
+                    <h:outputText value="#{mcTypeOauthController.selected.mcTypeOauthId}" title="#{bundle.ViewMcTypeOauthTitle_mcTypeOauthId}"/>
+                    <h:outputText value="#{bundle.ViewMcTypeOauthLabel_mcTypeOauthDescription}"/>
+                    <h:outputText value="#{mcTypeOauthController.selected.mcTypeOauthDescription}" title="#{bundle.ViewMcTypeOauthTitle_mcTypeOauthDescription}"/>
+                    <h:outputText value="#{bundle.ViewMcTypeOauthLabel_mcTypeOauthStatus}"/>
+                    <h:outputText value="#{mcTypeOauthController.selected.mcTypeOauthStatus}" title="#{bundle.ViewMcTypeOauthTitle_mcTypeOauthStatus}"/>
+                    <h:outputText value="#{bundle.ViewMcTypeOauthLabel_mcTypeOauthAlterUser}"/>
+                    <h:outputText value="#{mcTypeOauthController.selected.mcTypeOauthAlterUser}" title="#{bundle.ViewMcTypeOauthTitle_mcTypeOauthAlterUser}"/>
+                    <h:outputText value="#{bundle.ViewMcTypeOauthLabel_mcTypeOauthAlterDate}"/>
+                    <h:outputText value="#{mcTypeOauthController.selected.mcTypeOauthAlterDate}" title="#{bundle.ViewMcTypeOauthTitle_mcTypeOauthAlterDate}"/>
+                    <h:outputText value="#{bundle.ViewMcTypeOauthLabel_mcTypeOauthAlterNetwork}"/>
+                    <h:outputText value="#{mcTypeOauthController.selected.mcTypeOauthAlterNetwork}" title="#{bundle.ViewMcTypeOauthTitle_mcTypeOauthAlterNetwork}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcTypeOauthController.destroyAndView}" value="#{bundle.ViewMcTypeOauthDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMcTypeOauthEditLink}"/>
+                <br />
+                <h:commandLink action="#{mcTypeOauthController.prepareCreate}" value="#{bundle.ViewMcTypeOauthCreateLink}" />
+                <br />
+                <h:commandLink action="#{mcTypeOauthController.prepareList}" value="#{bundle.ViewMcTypeOauthShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMcTypeOauthIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMcUsersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersId}" for="mcUsersId" />
+                    <h:inputText id="mcUsersId" value="#{mcUsersController.selected.mcUsersId}" title="#{bundle.CreateMcUsersTitle_mcUsersId}" required="true" requiredMessage="#{bundle.CreateMcUsersRequiredMessage_mcUsersId}"/>
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersName}" for="mcUsersName" />
+                    <h:inputText id="mcUsersName" value="#{mcUsersController.selected.mcUsersName}" title="#{bundle.CreateMcUsersTitle_mcUsersName}" required="true" requiredMessage="#{bundle.CreateMcUsersRequiredMessage_mcUsersName}"/>
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersDescription}" for="mcUsersDescription" />
+                    <h:inputText id="mcUsersDescription" value="#{mcUsersController.selected.mcUsersDescription}" title="#{bundle.CreateMcUsersTitle_mcUsersDescription}" />
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersBirthDate}" for="mcUsersBirthDate" />
+                    <h:inputText id="mcUsersBirthDate" value="#{mcUsersController.selected.mcUsersBirthDate}" title="#{bundle.CreateMcUsersTitle_mcUsersBirthDate}" />
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersGender}" for="mcUsersGender" />
+                    <h:inputText id="mcUsersGender" value="#{mcUsersController.selected.mcUsersGender}" title="#{bundle.CreateMcUsersTitle_mcUsersGender}" />
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersLogin}" for="mcUsersLogin" />
+                    <h:inputText id="mcUsersLogin" value="#{mcUsersController.selected.mcUsersLogin}" title="#{bundle.CreateMcUsersTitle_mcUsersLogin}" required="true" requiredMessage="#{bundle.CreateMcUsersRequiredMessage_mcUsersLogin}"/>
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersPass}" for="mcUsersPass" />
+                    <h:inputText id="mcUsersPass" value="#{mcUsersController.selected.mcUsersPass}" title="#{bundle.CreateMcUsersTitle_mcUsersPass}" required="true" requiredMessage="#{bundle.CreateMcUsersRequiredMessage_mcUsersPass}"/>
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersAlterUser}" for="mcUsersAlterUser" />
+                    <h:inputText id="mcUsersAlterUser" value="#{mcUsersController.selected.mcUsersAlterUser}" title="#{bundle.CreateMcUsersTitle_mcUsersAlterUser}" />
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersAlterDate}" for="mcUsersAlterDate" />
+                    <h:inputText id="mcUsersAlterDate" value="#{mcUsersController.selected.mcUsersAlterDate}" title="#{bundle.CreateMcUsersTitle_mcUsersAlterDate}" />
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersAlterNetwork}" for="mcUsersAlterNetwork" />
+                    <h:inputText id="mcUsersAlterNetwork" value="#{mcUsersController.selected.mcUsersAlterNetwork}" title="#{bundle.CreateMcUsersTitle_mcUsersAlterNetwork}" />
+                    <h:outputLabel value="#{bundle.CreateMcUsersLabel_mcUsersType}" for="mcUsersType" />
+                    <h:selectOneMenu id="mcUsersType" value="#{mcUsersController.selected.mcUsersType}" title="#{bundle.CreateMcUsersTitle_mcUsersType}" >
+                        <f:selectItems value="#{mcTypeOauthController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcUsersController.create}" value="#{bundle.CreateMcUsersSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mcUsersController.prepareList}" value="#{bundle.CreateMcUsersShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateMcUsersIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMcUsersMenuOauthTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMcUsersMenuOauthLabel_mcUsersMenuOauthId}" for="mcUsersMenuOauthId" />
+                    <h:inputText id="mcUsersMenuOauthId" value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthId}" title="#{bundle.CreateMcUsersMenuOauthTitle_mcUsersMenuOauthId}" required="true" requiredMessage="#{bundle.CreateMcUsersMenuOauthRequiredMessage_mcUsersMenuOauthId}"/>
+                    <h:outputLabel value="#{bundle.CreateMcUsersMenuOauthLabel_mcUsersMenuOauthMenuId}" for="mcUsersMenuOauthMenuId" />
+                    <h:selectOneMenu id="mcUsersMenuOauthMenuId" value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthMenuId}" title="#{bundle.CreateMcUsersMenuOauthTitle_mcUsersMenuOauthMenuId}" >
+                        <f:selectItems value="#{mcMenuAdvancedController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateMcUsersMenuOauthLabel_mcUsersMenuOauthUsersId}" for="mcUsersMenuOauthUsersId" />
+                    <h:selectOneMenu id="mcUsersMenuOauthUsersId" value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthUsersId}" title="#{bundle.CreateMcUsersMenuOauthTitle_mcUsersMenuOauthUsersId}" >
+                        <f:selectItems value="#{mcUsersController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcUsersMenuOauthController.create}" value="#{bundle.CreateMcUsersMenuOauthSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mcUsersMenuOauthController.prepareList}" value="#{bundle.CreateMcUsersMenuOauthShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateMcUsersMenuOauthIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

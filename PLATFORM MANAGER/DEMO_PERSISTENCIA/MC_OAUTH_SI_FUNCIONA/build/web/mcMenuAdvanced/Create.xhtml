@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMcMenuAdvancedTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMcMenuAdvancedLabel_mcMenuAdvancedId}" for="mcMenuAdvancedId" />
+                    <h:inputText id="mcMenuAdvancedId" value="#{mcMenuAdvancedController.selected.mcMenuAdvancedId}" title="#{bundle.CreateMcMenuAdvancedTitle_mcMenuAdvancedId}" required="true" requiredMessage="#{bundle.CreateMcMenuAdvancedRequiredMessage_mcMenuAdvancedId}"/>
+                    <h:outputLabel value="#{bundle.CreateMcMenuAdvancedLabel_mcMenuAdvancedName}" for="mcMenuAdvancedName" />
+                    <h:inputText id="mcMenuAdvancedName" value="#{mcMenuAdvancedController.selected.mcMenuAdvancedName}" title="#{bundle.CreateMcMenuAdvancedTitle_mcMenuAdvancedName}" />
+                    <h:outputLabel value="#{bundle.CreateMcMenuAdvancedLabel_mcMenuAdvancedStatus}" for="mcMenuAdvancedStatus" />
+                    <h:inputText id="mcMenuAdvancedStatus" value="#{mcMenuAdvancedController.selected.mcMenuAdvancedStatus}" title="#{bundle.CreateMcMenuAdvancedTitle_mcMenuAdvancedStatus}" />
+                    <h:outputLabel value="#{bundle.CreateMcMenuAdvancedLabel_mcMenuAdvancedAlterUser}" for="mcMenuAdvancedAlterUser" />
+                    <h:inputText id="mcMenuAdvancedAlterUser" value="#{mcMenuAdvancedController.selected.mcMenuAdvancedAlterUser}" title="#{bundle.CreateMcMenuAdvancedTitle_mcMenuAdvancedAlterUser}" />
+                    <h:outputLabel value="#{bundle.CreateMcMenuAdvancedLabel_mcMenuAdvancedAlterDate}" for="mcMenuAdvancedAlterDate" />
+                    <h:inputText id="mcMenuAdvancedAlterDate" value="#{mcMenuAdvancedController.selected.mcMenuAdvancedAlterDate}" title="#{bundle.CreateMcMenuAdvancedTitle_mcMenuAdvancedAlterDate}" />
+                    <h:outputLabel value="#{bundle.CreateMcMenuAdvancedLabel_mcMenuAdvancdAlterNetwork}" for="mcMenuAdvancdAlterNetwork" />
+                    <h:inputText id="mcMenuAdvancdAlterNetwork" value="#{mcMenuAdvancedController.selected.mcMenuAdvancdAlterNetwork}" title="#{bundle.CreateMcMenuAdvancedTitle_mcMenuAdvancdAlterNetwork}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mcMenuAdvancedController.create}" value="#{bundle.CreateMcMenuAdvancedSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mcMenuAdvancedController.prepareList}" value="#{bundle.CreateMcMenuAdvancedShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateMcMenuAdvancedIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
