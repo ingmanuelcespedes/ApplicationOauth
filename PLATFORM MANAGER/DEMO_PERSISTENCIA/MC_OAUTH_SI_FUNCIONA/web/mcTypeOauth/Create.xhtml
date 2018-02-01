@@ -15,18 +15,10 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthId}" for="mcTypeOauthId" />
-                    <h:inputText id="mcTypeOauthId" value="#{mcTypeOauthController.selected.mcTypeOauthId}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthId}" required="true" requiredMessage="#{bundle.CreateMcTypeOauthRequiredMessage_mcTypeOauthId}"/>
                     <h:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthDescription}" for="mcTypeOauthDescription" />
                     <h:inputText id="mcTypeOauthDescription" value="#{mcTypeOauthController.selected.mcTypeOauthDescription}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthDescription}" required="true" requiredMessage="#{bundle.CreateMcTypeOauthRequiredMessage_mcTypeOauthDescription}"/>
                     <h:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthStatus}" for="mcTypeOauthStatus" />
                     <h:inputText id="mcTypeOauthStatus" value="#{mcTypeOauthController.selected.mcTypeOauthStatus}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthStatus}" required="true" requiredMessage="#{bundle.CreateMcTypeOauthRequiredMessage_mcTypeOauthStatus}"/>
-                    <h:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthAlterUser}" for="mcTypeOauthAlterUser" />
-                    <h:inputText id="mcTypeOauthAlterUser" value="#{mcTypeOauthController.selected.mcTypeOauthAlterUser}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthAlterUser}" />
-                    <h:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthAlterDate}" for="mcTypeOauthAlterDate" />
-                    <h:inputText id="mcTypeOauthAlterDate" value="#{mcTypeOauthController.selected.mcTypeOauthAlterDate}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthAlterDate}" />
-                    <h:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthAlterNetwork}" for="mcTypeOauthAlterNetwork" />
-                    <h:inputText id="mcTypeOauthAlterNetwork" value="#{mcTypeOauthController.selected.mcTypeOauthAlterNetwork}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthAlterNetwork}" />
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{mcTypeOauthController.create}" value="#{bundle.CreateMcTypeOauthSaveLink}" />

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McUsersMenuOauthEditDlg" widgetVar="McUsersMenuOauthEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditMcUsersMenuOauthTitle}">
+            <h:form id="McUsersMenuOauthEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcUsersMenuOauthController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditMcUsersMenuOauthLabel_mcUsersMenuOauthId}" for="mcUsersMenuOauthId" />
+                        <p:inputText id="mcUsersMenuOauthId" value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthId}" title="#{bundle.EditMcUsersMenuOauthTitle_mcUsersMenuOauthId}" required="true" requiredMessage="#{bundle.EditMcUsersMenuOauthRequiredMessage_mcUsersMenuOauthId}"/>
+                        <p:outputLabel value="#{bundle.EditMcUsersMenuOauthLabel_mcUsersMenuOauthMenuId}" for="mcUsersMenuOauthMenuId" />
+                        <p:selectOneMenu id="mcUsersMenuOauthMenuId" value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthMenuId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{mcMenuAdvancedController.itemsAvailableSelectOne}"
+                                           var="mcUsersMenuOauthMenuIdItem"
+                                           itemValue="#{mcUsersMenuOauthMenuIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditMcUsersMenuOauthLabel_mcUsersMenuOauthUsersId}" for="mcUsersMenuOauthUsersId" />
+                        <p:selectOneMenu id="mcUsersMenuOauthUsersId" value="#{mcUsersMenuOauthController.selected.mcUsersMenuOauthUsersId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{mcUsersController.itemsAvailableSelectOne}"
+                                           var="mcUsersMenuOauthUsersIdItem"
+                                           itemValue="#{mcUsersMenuOauthUsersIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mcUsersMenuOauthController.update}" value="#{bundle.Save}" update="display,:McUsersMenuOauthListForm:datalist,:growl" oncomplete="handleSubmit(args, 'McUsersMenuOauthEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="McUsersMenuOauthEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

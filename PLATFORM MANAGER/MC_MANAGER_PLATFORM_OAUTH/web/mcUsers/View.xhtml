@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McUsersViewDlg" widgetVar="McUsersViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMcUsersTitle}">
+            <h:form id="McUsersViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcUsersController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersId}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersId}" title="#{bundle.ViewMcUsersTitle_mcUsersId}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersName}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersName}" title="#{bundle.ViewMcUsersTitle_mcUsersName}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersDescription}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersDescription}" title="#{bundle.ViewMcUsersTitle_mcUsersDescription}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersBirthDate}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersBirthDate}" title="#{bundle.ViewMcUsersTitle_mcUsersBirthDate}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersGender}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersGender}" title="#{bundle.ViewMcUsersTitle_mcUsersGender}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersLogin}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersLogin}" title="#{bundle.ViewMcUsersTitle_mcUsersLogin}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersPass}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersPass}" title="#{bundle.ViewMcUsersTitle_mcUsersPass}"/>
+                        <h:outputText value="#{bundle.ViewMcUsersLabel_mcUsersType}"/>
+                        <h:outputText value="#{mcUsersController.selected.mcUsersType}" title="#{bundle.ViewMcUsersTitle_mcUsersType}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="McUsersViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

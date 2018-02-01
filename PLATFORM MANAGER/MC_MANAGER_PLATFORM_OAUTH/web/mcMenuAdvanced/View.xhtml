@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McMenuAdvancedViewDlg" widgetVar="McMenuAdvancedViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMcMenuAdvancedTitle}">
+            <h:form id="McMenuAdvancedViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcMenuAdvancedController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMcMenuAdvancedLabel_mcMenuAdvancedId}"/>
+                        <h:outputText value="#{mcMenuAdvancedController.selected.mcMenuAdvancedId}" title="#{bundle.ViewMcMenuAdvancedTitle_mcMenuAdvancedId}"/>
+                        <h:outputText value="#{bundle.ViewMcMenuAdvancedLabel_mcMenuAdvancedName}"/>
+                        <h:outputText value="#{mcMenuAdvancedController.selected.mcMenuAdvancedName}" title="#{bundle.ViewMcMenuAdvancedTitle_mcMenuAdvancedName}"/>
+                        <h:outputText value="#{bundle.ViewMcMenuAdvancedLabel_mcMenuAdvancedStatus}"/>
+                        <h:outputText value="#{mcMenuAdvancedController.selected.mcMenuAdvancedStatus}" title="#{bundle.ViewMcMenuAdvancedTitle_mcMenuAdvancedStatus}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="McMenuAdvancedViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -6,6 +6,8 @@ import COM.JSF.util.PaginationHelper;
 import COM.BEAN.McTypeOauthFacade;
 
 import java.io.Serializable;
+import java.net.InetAddress;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -81,6 +83,9 @@ public class McTypeOauthController implements Serializable {
 
     public String create() {
         try {
+            current.setMcTypeOauthAlterDate(new SimpleDateFormat("dd-MM-YYYY hh:mm:ss").format(new java.util.Date()));
+            current.setMcTypeOauthAlterNetwork(InetAddress.getLocalHost().getHostAddress());
+            current.setMcTypeOauthAlterUser(ResourceBundle.getBundle("/Bundle").getString("UserMcSuperAdmin"));
             getFacade().create(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("McTypeOauthCreated"));
             return prepareCreate();

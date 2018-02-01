@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McTypeOauthCreateDlg" widgetVar="McTypeOauthCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMcTypeOauthTitle}">
+            <h:form id="McTypeOauthCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcTypeOauthController.selected != null}">                        
+                        <p:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthDescription}" for="mcTypeOauthDescription" />
+                        <p:inputText id="mcTypeOauthDescription" value="#{mcTypeOauthController.selected.mcTypeOauthDescription}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthDescription}" required="true" requiredMessage="#{bundle.CreateMcTypeOauthRequiredMessage_mcTypeOauthDescription}"/>
+                        <p:outputLabel value="#{bundle.CreateMcTypeOauthLabel_mcTypeOauthStatus}" for="mcTypeOauthStatus" />
+                        <p:inputText id="mcTypeOauthStatus" value="#{mcTypeOauthController.selected.mcTypeOauthStatus}" title="#{bundle.CreateMcTypeOauthTitle_mcTypeOauthStatus}" required="true" requiredMessage="#{bundle.CreateMcTypeOauthRequiredMessage_mcTypeOauthStatus}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mcTypeOauthController.create}" value="#{bundle.Save}" update="display,:McTypeOauthListForm:datalist,:growl" oncomplete="handleSubmit(args,'McTypeOauthCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="McTypeOauthCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

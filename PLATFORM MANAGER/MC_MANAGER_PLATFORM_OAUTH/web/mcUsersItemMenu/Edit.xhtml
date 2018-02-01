@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McUsersItemMenuEditDlg" widgetVar="McUsersItemMenuEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditMcUsersItemMenuTitle}">
+            <h:form id="McUsersItemMenuEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcUsersItemMenuController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditMcUsersItemMenuLabel_mcUsersItemMenuId}" for="mcUsersItemMenuId" />
+                        <p:inputText id="mcUsersItemMenuId" value="#{mcUsersItemMenuController.selected.mcUsersItemMenuId}" title="#{bundle.EditMcUsersItemMenuTitle_mcUsersItemMenuId}" required="true" requiredMessage="#{bundle.EditMcUsersItemMenuRequiredMessage_mcUsersItemMenuId}"/>
+                        <p:outputLabel value="#{bundle.EditMcUsersItemMenuLabel_mcMenuItemMenuItemId}" for="mcMenuItemMenuItemId" />
+                        <p:selectOneMenu id="mcMenuItemMenuItemId" value="#{mcUsersItemMenuController.selected.mcMenuItemMenuItemId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{mcMenuItemController.itemsAvailableSelectOne}"
+                                           var="mcMenuItemMenuItemIdItem"
+                                           itemValue="#{mcMenuItemMenuItemIdItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditMcUsersItemMenuLabel_mcMenuItemUsersId}" for="mcMenuItemUsersId" />
+                        <p:selectOneMenu id="mcMenuItemUsersId" value="#{mcUsersItemMenuController.selected.mcMenuItemUsersId}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{mcUsersController.itemsAvailableSelectOne}"
+                                           var="mcMenuItemUsersIdItem"
+                                           itemValue="#{mcMenuItemUsersIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mcUsersItemMenuController.update}" value="#{bundle.Save}" update="display,:McUsersItemMenuListForm:datalist,:growl" oncomplete="handleSubmit(args, 'McUsersItemMenuEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="McUsersItemMenuEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

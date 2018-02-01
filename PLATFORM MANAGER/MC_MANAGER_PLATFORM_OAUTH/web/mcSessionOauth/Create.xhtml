@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McSessionOauthCreateDlg" widgetVar="McSessionOauthCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMcSessionOauthTitle}">
+            <h:form id="McSessionOauthCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcSessionOauthController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateMcSessionOauthLabel_mcSessionOauthUserLogin}" for="mcSessionOauthUserLogin" />
+                        <p:inputText id="mcSessionOauthUserLogin" value="#{mcSessionOauthController.selected.mcSessionOauthUserLogin}" title="#{bundle.CreateMcSessionOauthTitle_mcSessionOauthUserLogin}" />
+                        <p:outputLabel value="#{bundle.CreateMcSessionOauthLabel_mcSessionOauthDateBegin}" for="mcSessionOauthDateBegin" />
+                        <p:inputText id="mcSessionOauthDateBegin" value="#{mcSessionOauthController.selected.mcSessionOauthDateBegin}" title="#{bundle.CreateMcSessionOauthTitle_mcSessionOauthDateBegin}" />
+                        <p:outputLabel value="#{bundle.CreateMcSessionOauthLabel_mcSessionOauthDateEnd}" for="mcSessionOauthDateEnd" />
+                        <p:inputText id="mcSessionOauthDateEnd" value="#{mcSessionOauthController.selected.mcSessionOauthDateEnd}" title="#{bundle.CreateMcSessionOauthTitle_mcSessionOauthDateEnd}" />
+                        <p:outputLabel value="#{bundle.CreateMcSessionOauthLabel_mcSessionOauthUsersId}" for="mcSessionOauthUsersId" />
+                        <p:selectOneMenu id="mcSessionOauthUsersId" value="#{mcSessionOauthController.selected.mcSessionOauthUsersId}" >
+                            <f:selectItems value="#{mcUsersController.itemsAvailableSelectOne}"
+                                           var="mcSessionOauthUsersIdItem"
+                                           itemValue="#{mcSessionOauthUsersIdItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mcSessionOauthController.create}" value="#{bundle.Save}" update="display,:McSessionOauthListForm:datalist,:growl" oncomplete="handleSubmit(args,'McSessionOauthCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="McSessionOauthCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

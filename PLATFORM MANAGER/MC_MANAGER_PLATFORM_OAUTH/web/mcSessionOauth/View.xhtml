@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McSessionOauthViewDlg" widgetVar="McSessionOauthViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewMcSessionOauthTitle}">
+            <h:form id="McSessionOauthViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcSessionOauthController.selected != null}">
+                        <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthId}"/>
+                        <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthId}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthId}"/>
+                        <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthUserLogin}"/>
+                        <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthUserLogin}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthUserLogin}"/>
+                        <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthDateBegin}"/>
+                        <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthDateBegin}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthDateBegin}"/>
+                        <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthDateEnd}"/>
+                        <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthDateEnd}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthDateEnd}"/>
+                        <h:outputText value="#{bundle.ViewMcSessionOauthLabel_mcSessionOauthUsersId}"/>
+                        <h:outputText value="#{mcSessionOauthController.selected.mcSessionOauthUsersId}" title="#{bundle.ViewMcSessionOauthTitle_mcSessionOauthUsersId}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="McSessionOauthViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="McMenuItemCreateDlg" widgetVar="McMenuItemCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMcMenuItemTitle}">
+            <h:form id="McMenuItemCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{mcMenuItemController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateMcMenuItemLabel_mcMenuItemName}" for="mcMenuItemName" />
+                        <p:inputText id="mcMenuItemName" value="#{mcMenuItemController.selected.mcMenuItemName}" title="#{bundle.CreateMcMenuItemTitle_mcMenuItemName}" />
+                        <p:outputLabel value="#{bundle.CreateMcMenuItemLabel_mcMenuItemStatus}" for="mcMenuItemStatus" />
+                        <p:inputText id="mcMenuItemStatus" value="#{mcMenuItemController.selected.mcMenuItemStatus}" title="#{bundle.CreateMcMenuItemTitle_mcMenuItemStatus}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{mcMenuItemController.create}" value="#{bundle.Save}" update="display,:McMenuItemListForm:datalist,:growl" oncomplete="handleSubmit(args,'McMenuItemCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="McMenuItemCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -35,8 +35,8 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthDescription", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthDescription = :mcTypeOauthDescription")
     , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthStatus", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthStatus = :mcTypeOauthStatus")
     , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthAlterUser", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthAlterUser = :mcTypeOauthAlterUser")
-    , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthAlterDate", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthAlterDate = :mcTypeOauthAlterDate")
-    , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthAlterNetwork", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthAlterNetwork = :mcTypeOauthAlterNetwork")})
+    , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthAlterDate", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthAlterDate = :mcTypeOauthAlterDate")})
+//    , @NamedQuery(name = "McTypeOauth.findByMcTypeOauthAlterNetwork", query = "SELECT m FROM McTypeOauth m WHERE m.mcTypeOauthAlterNetwork = :mcTypeOauthAlterNetwork")})
 public class McTypeOauth implements Serializable {
 
     private static final long serialVersionUID = 1L;
